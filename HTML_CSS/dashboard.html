@@ -14,7 +14,7 @@
             <a href="ListComplaints.html">List Complaints</a>
             <a href="submit.html">Submit Complaint</a>
             <a href="dashboard.html" class="active">Dashboard</a>
-            <a href="profile.html">Profile</a>
+            <a href="#">Profile</a>
             <button class="login-btn">Login</button>
         </nav>
     </header>
@@ -82,7 +82,7 @@
             </div>
             
             <div class="complaints-list">
-                <div class="complaint-item">
+                <div class="complaint-card" onclick="location.href='complaint_details.html'">
                     <span class="status in-progress">In Progress</span>
                     <span class="category">Utilities</span>
                     <h3>Broken streetlight on Oak Avenue</h3>
@@ -91,7 +91,7 @@
                     <span class="votes">45</span>
                 </div>
 
-                <div class="complaint-item">
+                <div class="complaint-card" onclick="location.href='complaint_details.html'">
                     <span class="status pending">Pending</span>
                     <span class="category">Roads</span>
                     <h3>Pothole needs repair</h3>
@@ -100,7 +100,7 @@
                     <span class="votes">32</span>
                 </div>
 
-                <div class="complaint-item">
+                <div class="complaint-card" onclick="location.href='complaint_details.html'">
                     <span class="status resolved">Resolved</span>
                     <span class="category">Sanitation</span>
                     <h3>Garbage collection delayed</h3>
