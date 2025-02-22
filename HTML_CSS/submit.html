@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta information for character set and viewport configuration -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Submit Complaint</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Header (reused from home page) -->
+    <!-- Header section with navigation links -->
     <header class="header">
       <nav class="nav">
+        <!-- Logo and navigation links -->
         <a href="homepage.html" class="logo">📋 Complaint Tracker</a>
         <a href="homepage.html">Home</a>
         <a href="ListComplaints.html">List Complaints</a>
         <a href="submit.html">Submit Complaint</a>
         <a href="dashboard.html" class="active">Dashboard</a>
         <a href="profile.html">Profile</a>
+        <!-- Login button -->
         <button class="login-btn">Login</button>
       </nav>
     </header>
 
-    <!-- Main content -->
+    <!-- Main content area -->
     <main class="main-content">
       <section class="submit-section">
+        <!-- Heading and description for the form -->
         <h2>Submit a Complaint</h2>
         <p>
           Please fill out the form below to report an issue in your community.
         </p>
 
+        <!-- Complaint submission form -->
         <form class="complaint-form" action="#" method="POST">
-          <!-- Title -->
+          <!-- Title field for the complaint -->
           <label for="title">Title</label>
           <input
             type="text"
@@ -39,7 +44,7 @@
             required
           />
 
-          <!-- Category (select) -->
+          <!-- Dropdown for selecting the category of the complaint -->
           <label for="category">Category</label>
           <select id="category" name="category" required>
             <option value="">Select a category</option>
@@ -49,7 +54,7 @@
             <option value="public-safety">Public Safety</option>
           </select>
 
-          <!-- Location -->
+          <!-- Location input to describe where the issue is -->
           <label for="location">Location</label>
           <input
             type="text"
@@ -58,7 +63,7 @@
             placeholder="E.g. the location of the issue"
           />
 
-          <!-- Description (textarea) -->
+          <!-- Textarea for providing a detailed description of the issue -->
           <label for="description">Description</label>
           <textarea
             id="description"
@@ -67,25 +72,27 @@
             placeholder="Provide detailed information about the issue"
           ></textarea>
 
-          <!-- Optional image/file input -->
+          <!-- Optional file upload for attaching images related to the complaint -->
           <label for="image">Image (Optional)</label>
           <input type="file" id="image" name="image" />
 
-          <!-- Submit button -->
+          <!-- Submit button for the form -->
           <button type="submit">Submit Complaint</button>
         </form>
       </section>
     </main>
 
-    <!-- Footer (reused from home page) -->
+    <!-- Footer section with legal and about us links -->
     <footer class="footer">
       <div class="footer-content">
         <div>
+          <!-- About us section links -->
           <h3>About Us</h3>
           <a href="#">About</a>
           <a href="#">Contact</a>
         </div>
         <div>
+          <!-- Legal section links -->
           <h3>Legal</h3>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>

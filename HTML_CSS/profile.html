@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta information and linking to external stylesheet -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile - Complaint Tracker</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Header section with navigation links -->
     <header class="header">
       <nav class="nav">
+        <!-- Logo and navigation links -->
         <a href="homepage.html" class="logo">📋 Complaint Tracker</a>
         <a href="homepage.html">Home</a>
         <a href="ListComplaints.html">List Complaints</a>
         <a href="submit.html">Submit Complaint</a>
         <a href="dashboard.html">Dashboard</a>
         <a href="profile.html" class="active">Profile</a>
+        <!-- Login button -->
         <button class="login-btn">Login</button>
       </nav>
     </header>
 
+    <!-- Main content section -->
     <main class="main-content">
       <div class="dashboard-header">
         <div class="title-section">
+          <!-- Page title and description -->
           <h1>Profile</h1>
           <p>Manage your account settings</p>
         </div>
       </div>
 
-      <!-- Profile Header Card -->
+      <!-- Profile Header Card: displays user information and edit button -->
       <div class="complaint-card">
         <div class="profile-header">
           <div class="profile-info">
             <div class="profile-avatar">
+              <!-- Profile picture -->
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiHtG6KVEz_1RBhVlhzWByvPmU30fhVVAFA&s"
                 alt="John Doe"
@@ -39,19 +46,22 @@
               />
             </div>
             <div class="profile-details">
+              <!-- User details -->
               <h2>John Doe</h2>
               <p class="member-since">Member since March 2024</p>
               <div class="location">📍 New York, NY</div>
             </div>
           </div>
+          <!-- Edit Profile button -->
           <button class="report-btn">✏️ Edit Profile</button>
         </div>
       </div>
 
-      <!-- Profile Information -->
+      <!-- Profile Information section with user details -->
       <div class="complaint-card">
         <h2>Personal Information</h2>
         <div class="form-grid">
+          <!-- Form fields for user information -->
           <div class="form-group">
             <label>Full Name</label>
             <div class="input-with-icon">
@@ -83,11 +93,12 @@
         </div>
       </div>
 
-      <!-- Preferences -->
+      <!-- Preferences section -->
       <div class="complaint-card">
         <h2>Preferences</h2>
         <div class="preference-item">
           <div class="preference-info">
+            <!-- Notifications toggle preference -->
             <span class="icon">🔔</span>
             <div>
               <p class="preference-title">Notifications</p>
@@ -103,9 +114,10 @@
         </div>
       </div>
 
-      <!-- Privacy Settings -->
+      <!-- Privacy Settings section with toggle options -->
       <div class="complaint-card">
         <div class="section-header">
+          <!-- Section header with icon -->
           <span class="icon">🔒</span>
           <h2>Privacy Settings</h2>
         </div>
@@ -135,6 +147,7 @@
       </div>
     </main>
 
+    <!-- Footer section with links -->
     <footer class="footer">
       <div class="footer-content">
         <div>

@@ -1,80 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Meta information for character set and viewport configuration -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Complaint Tracker</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Header section containing navigation links -->
     <header class="header">
-        <nav class="nav">
-            <a href="homepage.html" class="logo">📋 Complaint Tracker</a>
-            <a href="homepage.html">Home</a>
-            <a href="ListComplaints.html">List Complaints</a>
-            <a href="submit.html">Submit Complaint</a>
-            <a href="dashboard.html" class="active">Dashboard</a>
-            <a href="profile.html">Profile</a>
-            <button class="login-btn">Login</button>
-        </nav>
+      <nav class="nav">
+        <!-- Logo and navigation links -->
+        <a href="homepage.html" class="logo">📋 Complaint Tracker</a>
+        <a href="homepage.html">Home</a>
+        <a href="ListComplaints.html">List Complaints</a>
+        <a href="submit.html">Submit Complaint</a>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <!-- Login button -->
+        <button class="login-btn">Login</button>
+      </nav>
     </header>
 
+    <!-- Main content area -->
     <main class="main-content">
-        <section class="hero">
-            <h1>Report and Track Community Issues</h1>
-            <p>Help improve your community by reporting problems and tracking their resolution</p>
-            <button class="report-btn">Report an Issue</button>
-        </section>
+      <!-- Hero section for site introduction -->
+      <section class="hero">
+        <h1>Report and Track Community Issues</h1>
+        <p>
+          Help improve your community by reporting problems and tracking their
+          resolution
+        </p>
+        <!-- Button to report an issue -->
+        <button class="report-btn">Report an Issue</button>
+      </section>
 
-        <section class="trending">
-            <h2>Trending Issues</h2>
-            <div class="issues-grid">
-                <div class="issue-card">
-                    <span class="tag">Roads</span>
-                    <h3>Pothole on Main Street</h3>
-                    <p class="location">📍 Downtown Area</p>
-                    <span class="vote-count">51</span>
-                </div>
-                <div class="issue-card">
-                    <span class="tag">Roads</span>
-                    <h3>Pothole on Main Street</h3>
-                    <p class="location">📍 Downtown Area</p>
-                    <span class="vote-count">52</span>
-                </div>
-                <div class="issue-card">
-                    <span class="tag">Roads</span>
-                    <h3>Pothole on Main Street</h3>
-                    <p class="location">📍 Downtown Area</p>
-                    <span class="vote-count">53</span>
-                </div>
-            </div>
-        </section>
+      <!-- Trending issues section with popular issues -->
+      <section class="trending">
+        <h2>Trending Issues</h2>
+        <div class="issues-grid">
+          <!-- Individual issue cards, each representing a trending issue -->
+          <div class="issue-card">
+            <span class="tag">Roads</span>
+            <h3>Pothole on Main Street</h3>
+            <p class="location">📍 Downtown Area</p>
+            <span class="vote-count">51</span>
+          </div>
+          <div class="issue-card">
+            <span class="tag">Roads</span>
+            <h3>Pothole on Main Street</h3>
+            <p class="location">📍 Downtown Area</p>
+            <span class="vote-count">52</span>
+          </div>
+          <div class="issue-card">
+            <span class="tag">Roads</span>
+            <h3>Pothole on Main Street</h3>
+            <p class="location">📍 Downtown Area</p>
+            <span class="vote-count">53</span>
+          </div>
+        </div>
+      </section>
 
-        <section class="categories">
-            <h2>Browse by Category</h2>
-            <div class="category-grid">
-                <div class="category-card">Roads</div>
-                <div class="category-card">Sanitation</div>
-                <div class="category-card">Utilities</div>
-                <div class="category-card">Public Safety</div>
-            </div>
-        </section>
+      <!-- Categories section for browsing issues by category -->
+      <section class="categories">
+        <h2>Browse by Category</h2>
+        <div class="category-grid">
+          <!-- Category cards, each representing a different category -->
+          <div class="category-card">Roads</div>
+          <div class="category-card">Sanitation</div>
+          <div class="category-card">Utilities</div>
+          <div class="category-card">Public Safety</div>
+        </div>
+      </section>
     </main>
 
+    <!-- Footer section with legal and about us links -->
     <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <h3>About Us</h3>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
-            <div>
-                <h3>Legal</h3>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
+      <div class="footer-content">
+        <div>
+          <!-- Links related to the about us section -->
+          <h3>About Us</h3>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
         </div>
+        <div>
+          <!-- Legal links including privacy policy and terms of service -->
+          <h3>Legal</h3>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
-
