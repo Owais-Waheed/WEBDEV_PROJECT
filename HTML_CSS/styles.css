@@ -521,3 +521,53 @@ body {
     }
 }
 
+
+/*Khubaib edits for submit.html*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Example of a second font family */ }
+
+/* Container for the submit form section */
+.submit-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.complaint-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.complaint-form label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.complaint-form input[type="text"],
+.complaint-form select,
+.complaint-form textarea,
+.complaint-form input[type="file"] {
+    padding: 0.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    font: inherit; /* inherit the font settings from the parent */
+}
+
+.complaint-form button[type="submit"] {
+    background-color: #0d6efd;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.complaint-form button[type="submit"]:hover {
+    background-color: #0b5ed7;
+}
