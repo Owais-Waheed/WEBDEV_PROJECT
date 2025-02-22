@@ -181,6 +181,119 @@ body {
     background-color: #f8f9fa;
 }
 
+.search-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-box {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+}
+
+.filter-dropdown {
+    padding: 0.75rem;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+}
+
+.complaints-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.complaint-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.complaint-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.status {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status.progress {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.status.resolved {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+
+
+.complaint-card {
+    position: relative;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.complaint-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.vote-buttons {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.upvote, .downvote {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.upvote:hover {
+    color: #28a745;
+    transform: scale(1.2);
+}
+
+.downvote:hover {
+    color: #dc3545;
+    transform: scale(1.2);
+}
+
+.vote-count {
+    font-weight: bold;
+}
+
+
+
+
+
 /* Responsive design */
 @media (max-width: 768px) {
     .issues-grid {
