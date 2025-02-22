@@ -1,154 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile - Complaint Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header class="header">
-        <nav class="nav">
-            <a href="homepage.html" class="logo">📋 Complaint Tracker</a>
-            <a href="homepage.html">Home</a>
-            <a href="ListComplaints.html">List Complaints</a>
-            <a href="submit.html">Submit Complaint</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="profile.html" class="active">Profile</a>
-            <button class="login-btn">Login</button>
-        </nav>
+      <nav class="nav">
+        <a href="homepage.html" class="logo">📋 Complaint Tracker</a>
+        <a href="homepage.html">Home</a>
+        <a href="ListComplaints.html">List Complaints</a>
+        <a href="submit.html">Submit Complaint</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="profile.html" class="active">Profile</a>
+        <button class="login-btn">Login</button>
+      </nav>
     </header>
 
     <main class="main-content">
-        <div class="dashboard-header">
-            <div class="title-section">
-                <h1>Profile</h1>
-                <p>Manage your account settings</p>
-            </div>
+      <div class="dashboard-header">
+        <div class="title-section">
+          <h1>Profile</h1>
+          <p>Manage your account settings</p>
         </div>
+      </div>
 
-        <!-- Profile Header Card -->
-        <div class="complaint-card">
-            <div class="profile-header">
-                <div class="profile-info">
-                    <div class="profile-avatar">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiHtG6KVEz_1RBhVlhzWByvPmU30fhVVAFA&s" alt="John Doe" class="avatar">
-                        <button class="camera-btn">
-                            📷
-                        </button>
-                    </div>
-                    <div class="profile-details">
-                        <h2>John Doe</h2>
-                        <p class="member-since">Member since March 2024</p>
-                        <div class="location">
-                            📍 New York, NY
-                        </div>
-                    </div>
-                </div>
-                <button class="report-btn">
-                    ✏️ Edit Profile
-                </button>
+      <!-- Profile Header Card -->
+      <div class="complaint-card">
+        <div class="profile-header">
+          <div class="profile-info">
+            <div class="profile-avatar">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiHtG6KVEz_1RBhVlhzWByvPmU30fhVVAFA&s"
+                alt="John Doe"
+                class="avatar"
+              />
             </div>
+            <div class="profile-details">
+              <h2>John Doe</h2>
+              <p class="member-since">Member since March 2024</p>
+              <div class="location">📍 New York, NY</div>
+            </div>
+          </div>
+          <button class="report-btn">✏️ Edit Profile</button>
         </div>
+      </div>
 
-        <!-- Profile Information -->
-        <div class="complaint-card">
-            <h2>Personal Information</h2>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <div class="input-with-icon">
-                        <span class="icon">👤</span>
-                        <input type="text" value="John Doe" disabled>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <div class="input-with-icon">
-                        <span class="icon">📧</span>
-                        <input type="email" value="john.doe@example.com" disabled>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Phone</label>
-                    <div class="input-with-icon">
-                        <span class="icon">📱</span>
-                        <input type="tel" value="+1 (555) 123-4567" disabled>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Location</label>
-                    <div class="input-with-icon">
-                        <span class="icon">📍</span>
-                        <input type="text" value="New York, NY" disabled>
-                    </div>
-                </div>
+      <!-- Profile Information -->
+      <div class="complaint-card">
+        <h2>Personal Information</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Full Name</label>
+            <div class="input-with-icon">
+              <span class="icon">👤</span>
+              <input type="text" value="John Doe" disabled />
             </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <div class="input-with-icon">
+              <span class="icon">📧</span>
+              <input type="email" value="john.doe@example.com" disabled />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <div class="input-with-icon">
+              <span class="icon">📱</span>
+              <input type="tel" value="+1 (555) 123-4567" disabled />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <div class="input-with-icon">
+              <span class="icon">📍</span>
+              <input type="text" value="New York, NY" disabled />
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- Preferences -->
-        <div class="complaint-card">
-            <h2>Preferences</h2>
-            <div class="preference-item">
-                <div class="preference-info">
-                    <span class="icon">🔔</span>
-                    <div>
-                        <p class="preference-title">Notifications</p>
-                        <p class="preference-desc">Receive updates about your complaints</p>
-                    </div>
-                </div>
-                <label class="toggle">
-                    <input type="checkbox" checked disabled>
-                    <span class="toggle-slider"></span>
-                </label>
+      <!-- Preferences -->
+      <div class="complaint-card">
+        <h2>Preferences</h2>
+        <div class="preference-item">
+          <div class="preference-info">
+            <span class="icon">🔔</span>
+            <div>
+              <p class="preference-title">Notifications</p>
+              <p class="preference-desc">
+                Receive updates about your complaints
+              </p>
             </div>
+          </div>
+          <label class="toggle-btn">
+            <input type="checkbox" checked class="disabled" />
+            <span class="button"></span>
+          </label>
         </div>
+      </div>
 
-        <!-- Privacy Settings -->
-        <div class="complaint-card">
-            <div class="section-header">
-                <span class="icon">🔒</span>
-                <h2>Privacy Settings</h2>
-            </div>
-            <div class="privacy-settings">
-                <div class="preference-item">
-                    <p>Show email to other users</p>
-                    <label class="toggle">
-                        <input type="checkbox" disabled>
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-                <div class="preference-item">
-                    <p>Show phone number to other users</p>
-                    <label class="toggle">
-                        <input type="checkbox" disabled>
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-                <div class="preference-item">
-                    <p>Show location to other users</p>
-                    <label class="toggle">
-                        <input type="checkbox" checked disabled>
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-            </div>
+      <!-- Privacy Settings -->
+      <div class="complaint-card">
+        <div class="section-header">
+          <span class="icon">🔒</span>
+          <h2>Privacy Settings</h2>
         </div>
+        <div class="privacy-settings">
+          <div class="preference-item">
+            <p>Show email to other users</p>
+            <label class="toggle-btn">
+              <input type="checkbox" class="disabled" />
+              <span class="button"></span>
+            </label>
+          </div>
+          <div class="preference-item">
+            <p>Show phone number to other users</p>
+            <label class="toggle-btn">
+              <input type="checkbox" class="disabled" />
+              <span class="button"></span>
+            </label>
+          </div>
+          <div class="preference-item">
+            <p>Show location to other users</p>
+            <label class="toggle-btn">
+              <input type="checkbox" checked class="disabled" />
+              <span class="button"></span>
+            </label>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <h3>About Us</h3>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
-            <div>
-                <h3>Legal</h3>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
+      <div class="footer-content">
+        <div>
+          <h3>About Us</h3>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
         </div>
+        <div>
+          <h3>Legal</h3>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
