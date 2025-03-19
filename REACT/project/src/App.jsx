@@ -7,6 +7,7 @@ import ComplaintDetail from './pages/ComplaintDetail';
 import SubmitComplaint from './pages/SubmitComplaint';
 import HomeLoggedIn from './pages/HomeLoggedIn';
 import ProfilePage from './pages/ProfilePage';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         {/* Wrap all routes inside the Layout component */}
         <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/complaints" element={<ComplaintList />} />
             <Route path="/complaints/:id" element={<ComplaintDetail />} />
             <Route path="/submit" element={<SubmitComplaint />} />

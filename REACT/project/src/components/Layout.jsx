@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import {
   Home,
   FileText,
@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 
 const Layout = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -20,7 +22,10 @@ const Layout = () => {
               <FileText className="h-6 w-6" />
               <span className="text-xl font-semibold">Complaint Tracker</span>
             </Link>
-            <button className="flex items-center space-x-1 px-4 py-2 rounded bg-gray-100">
+            <button
+              onClick={() => navigate("/login")}
+              className="flex items-center space-x-1 px-4 py-2 rounded bg-gray-100 hover:bg-gray-200"
+            >
               <LogIn className="h-4 w-4" />
               <span>Login</span>
             </button>
