@@ -8,6 +8,7 @@ import SubmitComplaint from './pages/SubmitComplaint';
 import HomeLoggedIn from './pages/HomeLoggedIn';
 import ProfilePage from './pages/ProfilePage';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/complaints" element={<ComplaintList />} />
             <Route path="/complaints/:id" element={<ComplaintDetail />} />
             <Route path="/submit" element={<SubmitComplaint />} />
