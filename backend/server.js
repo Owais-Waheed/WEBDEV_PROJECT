@@ -6,7 +6,7 @@ const cors = require('cors');
 
 // import your route modules
 const authRoutes = require('./routes/auth');
-const complaintRoutes = require('./routes/complaints');
+const complaintRoutes = require('./routes/complaint');
 
 const app = express();
 
