@@ -1,33 +1,72 @@
+// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';  // Import the Layout component
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
+import Layout from './components/Layout';
 import Home from './pages/Home';
+import HomeLoggedIn from './pages/HomeLoggedIn';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import SubmitComplaint from './pages/SubmitComplaint';
 import ComplaintList from './pages/ComplaintList';
 import ComplaintDetail from './pages/ComplaintDetail';
-import SubmitComplaint from './pages/SubmitComplaint';
-import HomeLoggedIn from './pages/HomeLoggedIn';
 import ProfilePage from './pages/ProfilePage';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        {/* Wrap all routes inside the Layout component */}
-        <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/complaints" element={<ComplaintList />} />
-            <Route path="/complaints/:id" element={<ComplaintDetail />} />
-            <Route path="/submit" element={<SubmitComplaint />} />
-            <Route path="/dashboard" element={<HomeLoggedIn />} />
-            <Route path="profile" element={<ProfilePage />} />
-        </Route>
-      </Routes>
-    </Router>
-  );
+function PrivateRoute({ children }) {
+  return localStorage.getItem('token')
+    ? children
+    : <Navigate to="/login" replace />;
 }
 
-export default App;
+export default function App() {
+  const isAuth = !!localStorage.getItem('token');
+
+  return (
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={ isAuth ? <HomeLoggedIn/> : <Home/> }/>
+          <Route path="/signup" element={<Signup/>}/>
+          <Route path="/login"  element={<Login/>}/>
+          
+          {/* Protected */}
+          <Route 
+            path="/submit" 
+            element={
+              <PrivateRoute>
+                <SubmitComplaint/>
+              </PrivateRoute>
+            }
+          />
+          <Route 
+            path="/complaints" 
+            element={
+              <PrivateRoute>
+                <ComplaintList/>
+              </PrivateRoute>
+            }
+          />
+          <Route 
+            path="/complaint/:id" 
+            element={
+              <PrivateRoute>
+                <ComplaintDetail/>
+              </PrivateRoute>
+            }
+          />
+          <Route 
+            path="/profile" 
+            element={
+              <PrivateRoute>
+                <ProfilePage/>
+              </PrivateRoute>
+            }
+          />
+
+          {/* catch-all */}
+          <Route path="*" element={<Navigate to="/" replace/>}/>
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
+}
