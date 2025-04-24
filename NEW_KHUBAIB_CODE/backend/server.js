@@ -25,6 +25,21 @@ app.get('/', (req, res) => {
   res.send('🚀 Complaint-Tracker API is up and running');
 });
 
+
+const multer = require("multer");
+const upload = multer({ storage: multer.memoryStorage() });
+
+app.post("/api/complaints", upload.array("images", 3), (req, res) => {
+  const { title, category, location, description } = req.body;
+  const images = req.files;
+
+  console.log("Complaint:", { title, category, location, description });
+  console.log("Images:", images?.map((f) => f.originalname));
+
+  res.json({ message: "Complaint with images received!" });
+});
+
+
 // read env vars
 const PORT      = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGODB_URI;
@@ -50,3 +65,4 @@ mongoose
     console.error('❌ MongoDB connection error:', err.message);
     process.exit(1);
   }); 
+

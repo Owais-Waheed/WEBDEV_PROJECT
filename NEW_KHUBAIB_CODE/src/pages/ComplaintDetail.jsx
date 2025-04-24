@@ -1,30 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import { MapPin, Calendar, MessageSquare, ThumbsUp, Image as ImageIcon } from 'lucide-react';
+import api from "../services/api.js";
+import { useLocation } from 'react-router-dom';
+
+
 
 const ComplaintDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams();// Inside your component
+  const location = useLocation();
+  const [complaint, setComplaint] = useState(location.state?.complaint || null);
 
-  // Mock complaint data
-  const complaint = {
-    id: 1,
-    title: "Pothole on Main Street",
-    description: "Large pothole causing traffic delays and potential vehicle damage. Located near the intersection with Oak Avenue.",
-    category: "Roads",
-    location: "Downtown",
-    status: "In Progress",
-    votes: 156,
-    date: "2024-03-10",
-    images: ["https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=800"],
-    comments: [
-      {
-        id: 1,
-        user: "John Doe",
-        content: "This needs immediate attention. I've seen multiple cars damaged.",
-        date: "2024-03-11"
-      }
-    ]
-  };
+  useEffect(() => {
+    axios.get(`/api/complaints/${complaint.id}`)
+      .then(res => setComplaint(res.data))
+      .catch(err => console.error("Failed to fetch complaint:", err));
+  }, [id]);
+
+  if (!complaint) return <div className="text-center mt-10 text-gray-600">Loading...</div>;
+
+  // ... (the rest of your detail UI remains unchanged
+
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

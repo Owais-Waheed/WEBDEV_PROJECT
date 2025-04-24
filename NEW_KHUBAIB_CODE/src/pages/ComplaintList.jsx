@@ -421,9 +421,9 @@ const ListComplaintsPage = () => {
                     </span>
                   </div>
                   <h3 className="font-semibold text-lg">
-                    <Link to={`/complaints/${complaint.id}`}>
-                      {complaint.title}
-                    </Link>
+                  <Link to={`/complaints/${complaint.id}`} state={{ complaint }}>
+                    <div>{complaint.title}</div>
+                  </Link>
                   </h3>
                   <p className="text-gray-600 text-sm">{complaint.description}</p>
                   <div className="flex items-center space-x-4 text-sm text-gray-500">

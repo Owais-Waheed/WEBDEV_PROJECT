@@ -62,6 +62,7 @@ export default function App() {
               </PrivateRoute>
             }
           />
+          <Route path="/complaints/:id" element={<ComplaintDetail />} />
 
           {/* catch-all */}
           <Route path="*" element={<Navigate to="/" replace/>}/>

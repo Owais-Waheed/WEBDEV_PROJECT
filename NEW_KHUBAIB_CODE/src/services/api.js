@@ -13,6 +13,8 @@ const api = {
     return response.json();
   },
 
+  
+
   // Get complaints of the logged-in user
   getMyComplaints: async () => {
     const response = await fetch(`${API_URL}/complaints/my`, {
@@ -23,25 +25,59 @@ const api = {
     return response.json();
   },
 
+  // createComplaint: async (complaintData) => {
+  //   try {
+  //     const response = await fetch(`${API_URL}/complaints`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${localStorage.getItem("token")}`, // The token
+  //       },
+  //       body: JSON.stringify(complaintData), // Sending the complaint data
+  //     });
+  //     if (!response.ok) {
+  //       throw new Error(`Failed to create complaint: ${response.statusText}`);
+  //     }
+  //     return await response.json(); // Returns the created complaint data
+  //   } catch (error) {
+  //     console.error(error);
+  //     return { error: error.message };
+  //   }
+  // },
+
   createComplaint: async (complaintData) => {
     try {
+      const formData = new FormData();
+      formData.append("title", complaintData.title);
+      formData.append("category", complaintData.category);
+      formData.append("location", complaintData.location);
+      formData.append("description", complaintData.description);
+  
+      // Append images (if any)
+      complaintData.images.forEach((file) => {
+        formData.append("images", file);
+      });
+  
       const response = await fetch(`${API_URL}/complaints`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // The token
+          Authorization: `Bearer ${localStorage.getItem("token")}`, // keep token
+          // ❌ Do NOT manually set Content-Type for FormData
         },
-        body: JSON.stringify(complaintData), // Sending the complaint data
+        body: formData,
       });
+  
       if (!response.ok) {
         throw new Error(`Failed to create complaint: ${response.statusText}`);
       }
-      return await response.json(); // Returns the created complaint data
+  
+      return await response.json();
     } catch (error) {
       console.error(error);
       return { error: error.message };
     }
   },
+  
 
   // Add comment to complaint (requires auth)
   addComment: async (complaintId, commentData) => {
