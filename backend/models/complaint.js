@@ -7,7 +7,7 @@ const complaintSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
-  
+
   title: {
     type: String,
     required: true
@@ -54,4 +54,9 @@ const complaintSchema = new mongoose.Schema({
 
 
 
-export const Complaint = mongoose.model('Complaint', complaintSchema);
+// export const Complaint = mongoose.model('Complaint', complaintSchema);
+// module.exports = Complaint;
+// module.exports = mongoose.model('Complaint', complaintSchema);
+
+const Complaint = mongoose.model('Complaint', complaintSchema);
+module.exports = { Complaint };

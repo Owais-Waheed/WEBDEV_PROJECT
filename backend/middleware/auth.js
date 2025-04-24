@@ -12,7 +12,9 @@ module.exports = function auth(req, res, next) {
     return res.status(401).json({ error: 'Token missing' });
 
   try {
+    console.log('JWT token:', token);
     const payload = jwt.verify(token, SECRET);
+    console.log('JWT payload:', payload);
     req.user = { id: payload.id };
     next();
   } catch (err) {
