@@ -184,19 +184,370 @@
 // }
 
 // src/components/Layout.jsx
+
+
+// import React from "react";
+// import { Link, useNavigate } from "react-router-dom";
+// import {
+//   Home,
+//   FileText,
+//   PlusCircle,
+//   LayoutDashboard,
+//   User,
+//   LogIn,
+//   LogOut,
+// } from "lucide-react";
+
+// export default function Layout({ children }) {
+//   const navigate = useNavigate();
+//   const token = localStorage.getItem("token");
+
+//   const handleLogout = () => {
+//     localStorage.removeItem("token");
+//     localStorage.removeItem("user");
+//     navigate("/login");
+//   };
+
+//   return (
+//     <div className="min-h-screen flex flex-col bg-gray-50">
+//       {/* Header */}
+//       <header className="bg-white shadow">
+//         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+//           <Link to="/" className="flex items-center space-x-2 text-gray-800">
+//             <FileText className="h-6 w-6" />
+//             <span className="text-xl font-semibold">Complaint Tracker</span>
+//           </Link>
+
+//           {token ? (
+//             <button
+//               onClick={handleLogout}
+//               className="flex items-center space-x-1 px-4 py-2 rounded bg-red-100 hover:bg-red-200 text-red-600"
+//             >
+//               <LogOut className="h-4 w-4" />
+//               <span>Logout</span>
+//             </button>
+//           ) : (
+//             <div className="space-x-2">
+//               <Link
+//                 to="/login"
+//                 className="flex items-center space-x-1 px-4 py-2 rounded bg-gray-100 hover:bg-gray-200 text-gray-700"
+//               >
+//                 <LogIn className="h-4 w-4" />
+//                 <span>Login</span>
+//               </Link>
+//               <Link
+//                 to="/signup"
+//                 className="flex items-center space-x-1 px-4 py-2 rounded bg-blue-100 hover:bg-blue-200 text-blue-700"
+//               >
+//                 <User className="h-4 w-4" />
+//                 <span>Sign Up</span>
+//               </Link>
+//             </div>
+//           )}
+//         </div>
+
+//         {/* Navigation */}
+//         <nav className="bg-gray-50 border-t">
+//           <div className="container mx-auto px-4 py-2">
+//             <ul className="flex space-x-6 text-gray-600">
+//               <li>
+//                 <Link
+//                   to="/"
+//                   className="flex items-center space-x-1 hover:text-blue-600"
+//                 >
+//                   <Home className="h-4 w-4" />
+//                   <span>Home</span>
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link
+//                   to="/complaints"
+//                   className="flex items-center space-x-1 hover:text-blue-600"
+//                 >
+//                   <FileText className="h-4 w-4" />
+//                   <span>List Complaints</span>
+//                 </Link>
+//               </li>
+//               {token && (
+//                 <>
+//                   <li>
+//                     <Link
+//                       to="/submit"
+//                       className="flex items-center space-x-1 hover:text-blue-600"
+//                     >
+//                       <PlusCircle className="h-4 w-4" />
+//                       <span>Submit</span>
+//                     </Link>
+//                   </li>
+//                   <li>
+//                     <Link
+//                       to="/dashboard"
+//                       className="flex items-center space-x-1 hover:text-blue-600"
+//                     >
+//                       <LayoutDashboard className="h-4 w-4" />
+//                       <span>Dashboard</span>
+//                     </Link>
+//                   </li>
+//                   <li>
+//                     <Link
+//                       to="/profile"
+//                       className="flex items-center space-x-1 hover:text-blue-600"
+//                     >
+//                       <User className="h-4 w-4" />
+//                       <span>Profile</span>
+//                     </Link>
+//                   </li>
+//                 </>
+//               )}
+//             </ul>
+//           </div>
+//         </nav>
+//       </header>
+
+//       {/* Main Content (renders your App.jsx children) */}
+//       <main className="flex-grow container mx-auto px-4 py-8">{children}</main>
+
+//       {/* Footer */}
+//       <footer className="bg-gray-100 mt-auto">
+//         <div className="container mx-auto px-4 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm">
+//           <div>
+//             <h3 className="font-semibold mb-2">About Us</h3>
+//             <ul className="space-y-1">
+//               <li>
+//                 <Link to="/about" className="hover:text-blue-600 text-gray-600">
+//                   About
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link
+//                   to="/contact"
+//                   className="hover:text-blue-600 text-gray-600"
+//                 >
+//                   Contact
+//                 </Link>
+//               </li>
+//             </ul>
+//           </div>
+//           <div>
+//             <h3 className="font-semibold mb-2">Legal</h3>
+//             <ul className="space-y-1">
+//               <li>
+//                 <Link
+//                   to="/privacy"
+//                   className="hover:text-blue-600 text-gray-600"
+//                 >
+//                   Privacy Policy
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link to="/terms" className="hover:text-blue-600 text-gray-600">
+//                   Terms of Service
+//                 </Link>
+//               </li>
+//             </ul>
+//           </div>
+//           <div className="col-span-2 sm:col-span-1">
+//             <h3 className="font-semibold mb-2">Feedback</h3>
+//             <p className="text-gray-600">
+//               We value your suggestions to improve the app!
+//             </p>
+//           </div>
+//           <div className="col-span-2 sm:col-span-4 text-center text-gray-500 mt-4">
+//             &copy; {new Date().getFullYear()} Complaint Tracker. All rights
+//             reserved.
+//           </div>
+//         </div>
+//       </footer>
+//     </div>
+//   );
+// }
+
+
+// import React from "react";
+// import { Link, useLocation, useNavigate } from "react-router-dom";
+// import {
+//   Home,
+//   FileText,
+//   PlusCircle,
+//   LayoutDashboard,
+//   User,
+//   LogIn,
+//   LogOut,
+// } from "lucide-react";
+
+// export default function Layout({ children }) {
+//   const location = useLocation();
+//   const navigate = useNavigate();
+//   const token = localStorage.getItem("token");
+
+//   const handleLogout = () => {
+//     localStorage.removeItem("token");
+//     localStorage.removeItem("user");
+//     navigate("/login");
+//   };
+
+//   return (
+//     <div className="min-h-screen flex flex-col bg-gray-50">
+//       {/* Header */}
+//       <header className="bg-white shadow">
+//         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+//           <Link to="/" className="flex items-center space-x-2 text-gray-800">
+//             <FileText className="h-6 w-6" />
+//             <span className="text-xl font-semibold">Complaint Tracker</span>
+//           </Link>
+
+//           {token ? (
+//             <button
+//               onClick={handleLogout}
+//               className="flex items-center space-x-1 px-4 py-2 rounded bg-red-100 hover:bg-red-200 text-red-600"
+//             >
+//               <LogOut className="h-4 w-4" />
+//               <span>Logout</span>
+//             </button>
+//           ) : (
+//             <div className="space-x-2">
+//               <Link
+//                 to="/login"
+//                 className="flex items-center space-x-1 px-4 py-2 rounded bg-gray-100 hover:bg-gray-200 text-gray-700"
+//               >
+//                 <LogIn className="h-4 w-4" />
+//                 <span>Login</span>
+//               </Link>
+//               <Link
+//                 to="/signup"
+//                 className="flex items-center space-x-1 px-4 py-2 rounded bg-blue-100 hover:bg-blue-200 text-blue-700"
+//               >
+//                 <User className="h-4 w-4" />
+//                 <span>Sign Up</span>
+//               </Link>
+//             </div>
+//           )}
+//         </div>
+
+//         {/* Navigation */}
+//         <nav className="bg-gray-50 border-t">
+//           <div className="container mx-auto px-4 py-2">
+//             <ul className="flex space-x-6 text-gray-600">
+//               <li>
+//                 <Link
+//                   to="/"
+//                   className="flex items-center space-x-1 hover:text-blue-600"
+//                 >
+//                   <Home className="h-4 w-4" />
+//                   <span>Home</span>
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link
+//                   to="/complaints"
+//                   className="flex items-center space-x-1 hover:text-blue-600"
+//                 >
+//                   <FileText className="h-4 w-4" />
+//                   <span>List Complaints</span>
+//                 </Link>
+//               </li>
+//               {token && (
+//                 <>
+//                   <li>
+//                     <Link
+//                       to="/submit"
+//                       className="flex items-center space-x-1 hover:text-blue-600"
+//                     >
+//                       <PlusCircle className="h-4 w-4" />
+//                       <span>Submit</span>
+//                     </Link>
+//                   </li>
+//                   <li>
+//                     <Link
+//                       to="/dashboard"
+//                       className="flex items-center space-x-1 hover:text-blue-600"
+//                     >
+//                       <LayoutDashboard className="h-4 w-4" />
+//                       <span>Dashboard</span>
+//                     </Link>
+//                   </li>
+//                   <li>
+//                     <Link
+//                       to="/profile"
+//                       className="flex items-center space-x-1 hover:text-blue-600"
+//                     >
+//                       <User className="h-4 w-4" />
+//                       <span>Profile</span>
+//                     </Link>
+//                   </li>
+//                 </>
+//               )}
+//             </ul>
+//           </div>
+//         </nav>
+//       </header>
+
+//       {/* Main Content */}
+//       <main className="flex-grow container mx-auto px-4 py-8">
+//         {children}
+//       </main>
+
+//       {/* Footer */}
+//       <footer className="bg-gray-100 mt-auto">
+//         <div className="container mx-auto px-4 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm">
+//           <div>
+//             <h3 className="font-semibold mb-2">About Us</h3>
+//             <ul className="space-y-1">
+//               <li>
+//                 <Link to="/about" className="hover:text-blue-600 text-gray-600">
+//                   About
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link to="/contact" className="hover:text-blue-600 text-gray-600">
+//                   Contact
+//                 </Link>
+//               </li>
+//             </ul>
+//           </div>
+//           <div>
+//             <h3 className="font-semibold mb-2">Legal</h3>
+//             <ul className="space-y-1">
+//               <li>
+//                 <Link to="/privacy" className="hover:text-blue-600 text-gray-600">
+//                   Privacy Policy
+//                 </Link>
+//               </li>
+//               <li>
+//                 <Link to="/terms" className="hover:text-blue-600 text-gray-600">
+//                   Terms of Service
+//                 </Link>
+//               </li>
+//             </ul>
+//           </div>
+//           <div className="col-span-2 sm:col-span-1">
+//             <h3 className="font-semibold mb-2">Feedback</h3>
+//             <p className="text-gray-600">
+//               We value your suggestions to improve the app!
+//             </p>
+//           </div>
+//           <div className="col-span-2 sm:col-span-4 text-center text-gray-500 mt-4">
+//             &copy; {new Date().getFullYear()} Complaint Tracker. All rights reserved.
+//           </div>
+//         </div>
+//       </footer>
+//     </div>
+//   );
+// }
+
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Home,
   FileText,
   PlusCircle,
-  LayoutDashboard,
   User,
   LogIn,
   LogOut,
 } from "lucide-react";
 
 export default function Layout({ children }) {
+  const location = useLocation();
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
@@ -254,7 +605,7 @@ export default function Layout({ children }) {
                   className="flex items-center space-x-1 hover:text-blue-600"
                 >
                   <Home className="h-4 w-4" />
-                  <span>Home</span>
+                  <span>{token ? "Dashboard" : "Home"}</span>
                 </Link>
               </li>
               <li>
@@ -279,15 +630,6 @@ export default function Layout({ children }) {
                   </li>
                   <li>
                     <Link
-                      to="/dashboard"
-                      className="flex items-center space-x-1 hover:text-blue-600"
-                    >
-                      <LayoutDashboard className="h-4 w-4" />
-                      <span>Dashboard</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       to="/profile"
                       className="flex items-center space-x-1 hover:text-blue-600"
                     >
@@ -302,8 +644,10 @@ export default function Layout({ children }) {
         </nav>
       </header>
 
-      {/* Main Content (renders your App.jsx children) */}
-      <main className="flex-grow container mx-auto px-4 py-8">{children}</main>
+      {/* Main Content */}
+      <main className="flex-grow container mx-auto px-4 py-8">
+        {children}
+      </main>
 
       {/* Footer */}
       <footer className="bg-gray-100 mt-auto">
@@ -317,10 +661,7 @@ export default function Layout({ children }) {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/contact"
-                  className="hover:text-blue-600 text-gray-600"
-                >
+                <Link to="/contact" className="hover:text-blue-600 text-gray-600">
                   Contact
                 </Link>
               </li>
@@ -330,10 +671,7 @@ export default function Layout({ children }) {
             <h3 className="font-semibold mb-2">Legal</h3>
             <ul className="space-y-1">
               <li>
-                <Link
-                  to="/privacy"
-                  className="hover:text-blue-600 text-gray-600"
-                >
+                <Link to="/privacy" className="hover:text-blue-600 text-gray-600">
                   Privacy Policy
                 </Link>
               </li>
@@ -351,8 +689,7 @@ export default function Layout({ children }) {
             </p>
           </div>
           <div className="col-span-2 sm:col-span-4 text-center text-gray-500 mt-4">
-            &copy; {new Date().getFullYear()} Complaint Tracker. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Complaint Tracker. All rights reserved.
           </div>
         </div>
       </footer>

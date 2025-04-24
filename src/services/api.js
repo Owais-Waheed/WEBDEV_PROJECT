@@ -120,6 +120,16 @@ const api = {
     );
     return response.json();
   },
+
+  getAllComplaints: async () => {
+    const response = await fetch(`${API_URL}/complaints`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch complaints: ${response.statusText}`);
+    }
+    return await response.json();
+  },
+  
+  
 };
 
 export default api;
