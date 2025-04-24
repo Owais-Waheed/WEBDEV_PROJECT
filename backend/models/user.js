@@ -20,4 +20,6 @@ const userSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
+userSchema.index({ username: 1 }, { sparse: true, expireAfterSeconds: 0 });
+
 module.exports = mongoose.model('User', userSchema);  

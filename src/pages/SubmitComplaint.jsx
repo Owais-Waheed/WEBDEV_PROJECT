@@ -269,17 +269,9 @@
 
 // export default SubmitComplaintPage;
 
-
-
-
-
-
-
-
-
 import React, { useState } from "react";
 import { MapPin, Upload, Send, AlertCircle } from "lucide-react";
-import api from '../services/api.js'; // Assuming your API functions are in the 'api.js' file
+import api from "../services/api.js"; // Assuming your API functions are in the 'api.js' file
 
 const SubmitComplaintPage = () => {
   const [formData, setFormData] = useState({
@@ -320,7 +312,8 @@ const SubmitComplaintPage = () => {
     if (!formData.title.trim()) newErrors.title = "Title is required";
     if (!formData.category) newErrors.category = "Category is required";
     if (!formData.location.trim()) newErrors.location = "Location is required";
-    if (!formData.description.trim()) newErrors.description = "Description is required";
+    if (!formData.description.trim())
+      newErrors.description = "Description is required";
     return newErrors;
   };
 
@@ -334,7 +327,7 @@ const SubmitComplaintPage = () => {
     }
 
     setIsSubmitting(true);
-
+    
     try {
       const complaintData = {
         title: formData.title,
@@ -372,13 +365,19 @@ const SubmitComplaintPage = () => {
       <div className="bg-white rounded-lg shadow-sm p-6">
         <div className="mb-6">
           <h1 className="text-2xl font-bold mb-2">Submit a Complaint</h1>
-          <p className="text-gray-600">Help us improve our community by reporting issues that need attention.</p>
+          <p className="text-gray-600">
+            Help us improve our community by reporting issues that need
+            attention.
+          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Title */}
           <div>
-            <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="title"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Title
             </label>
             <input
@@ -387,7 +386,9 @@ const SubmitComplaintPage = () => {
               name="title"
               value={formData.title}
               onChange={handleInputChange}
-              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${errors.title ? "border-red-500" : "border-gray-300"}`}
+              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+                errors.title ? "border-red-500" : "border-gray-300"
+              }`}
               placeholder="Brief title describing the issue"
             />
             {errors.title && (
@@ -400,7 +401,10 @@ const SubmitComplaintPage = () => {
 
           {/* Category */}
           <div>
-            <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="category"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Category
             </label>
             <select
@@ -408,13 +412,17 @@ const SubmitComplaintPage = () => {
               name="category"
               value={formData.category}
               onChange={handleInputChange}
-              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${errors.category ? "border-red-500" : "border-gray-300"}`}
+              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+                errors.category ? "border-red-500" : "border-gray-300"
+              }`}
             >
               <option value="">Select a category</option>
               <option value="Roads">Roads</option>
               <option value="Sanitation">Sanitation</option>
               <option value="Utilities">Utilities</option>
               <option value="Public Safety">Public Safety</option>
+              <option value="Infrastructure">Infrastructure</option>
+              <option value="Other">Other</option>
             </select>
             {errors.category && (
               <p className="mt-1 text-sm text-red-500 flex items-center">
@@ -426,7 +434,10 @@ const SubmitComplaintPage = () => {
 
           {/* Location */}
           <div>
-            <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="location"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Location
             </label>
             <div className="relative">
@@ -437,7 +448,9 @@ const SubmitComplaintPage = () => {
                 name="location"
                 value={formData.location}
                 onChange={handleInputChange}
-                className={`w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${errors.location ? "border-red-500" : "border-gray-300"}`}
+                className={`w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+                  errors.location ? "border-red-500" : "border-gray-300"
+                }`}
                 placeholder="Enter the location of the issue"
               />
             </div>
@@ -451,7 +464,10 @@ const SubmitComplaintPage = () => {
 
           {/* Description */}
           <div>
-            <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="description"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Description
             </label>
             <textarea
@@ -460,7 +476,9 @@ const SubmitComplaintPage = () => {
               value={formData.description}
               onChange={handleInputChange}
               rows={4}
-              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${errors.description ? "border-red-500" : "border-gray-300"}`}
+              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 ${
+                errors.description ? "border-red-500" : "border-gray-300"
+              }`}
               placeholder="Provide detailed information about the issue"
             />
             {errors.description && (
@@ -487,7 +505,10 @@ const SubmitComplaintPage = () => {
                     id="image-upload"
                     multiple
                   />
-                  <label htmlFor="image-upload" className="flex items-center justify-center px-4 py-2 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500">
+                  <label
+                    htmlFor="image-upload"
+                    className="flex items-center justify-center px-4 py-2 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500"
+                  >
                     <Upload className="h-5 w-5 mr-2 text-gray-400" />
                     <span className="text-gray-600">Upload images (max 3)</span>
                   </label>
@@ -496,7 +517,10 @@ const SubmitComplaintPage = () => {
               {formData.images.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {formData.images.map((image, index) => (
-                    <div key={index} className="relative bg-gray-100 rounded-lg p-2">
+                    <div
+                      key={index}
+                      className="relative bg-gray-100 rounded-lg p-2"
+                    >
                       <div className="text-sm text-gray-600">{image.name}</div>
                       <button
                         type="button"

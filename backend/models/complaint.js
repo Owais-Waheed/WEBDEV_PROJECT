@@ -19,7 +19,7 @@ const complaintSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ['Roads', 'Utilities', 'Sanitation', 'Infrastructure']
+    enum: ['Roads', 'Utilities', 'Sanitation', 'Infrastructure', 'Public Safety', 'Infrastructure', 'Other']
   },
   location: {
     type: String,

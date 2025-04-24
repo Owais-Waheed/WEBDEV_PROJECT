@@ -46,10 +46,9 @@
 //   },
 // };
 
+const API_URL = "/api";
 
-const API_URL = 'http://localhost:5000/api';
-
-export const api = {
+const api = {
   // Get all complaints
   getComplaints: async () => {
     const response = await fetch(`${API_URL}/complaints`);
@@ -66,8 +65,8 @@ export const api = {
   getMyComplaints: async () => {
     const response = await fetch(`${API_URL}/complaints/my`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     });
     return response.json();
   },
@@ -75,10 +74,10 @@ export const api = {
   createComplaint: async (complaintData) => {
     try {
       const response = await fetch(`${API_URL}/complaints`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`, // The token
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`, // The token
         },
         body: JSON.stringify(complaintData), // Sending the complaint data
       });
@@ -91,28 +90,36 @@ export const api = {
       return { error: error.message };
     }
   },
-  
+
   // Add comment to complaint (requires auth)
   addComment: async (complaintId, commentData) => {
-    const response = await fetch(`${API_URL}/complaints/${complaintId}/comments`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`,
-      },
-      body: JSON.stringify(commentData),
-    });
+    const response = await fetch(
+      `${API_URL}/complaints/${complaintId}/comments`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify(commentData),
+      }
+    );
     return response.json();
   },
 
   // Upvote a complaint (requires auth)
   upvoteComplaint: async (complaintId) => {
-    const response = await fetch(`${API_URL}/complaints/${complaintId}/upvote`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`,
-      },
-    });
+    const response = await fetch(
+      `${API_URL}/complaints/${complaintId}/upvote`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
     return response.json();
   },
 };
+
+export default api;

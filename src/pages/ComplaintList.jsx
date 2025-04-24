@@ -227,7 +227,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { api } from "../services/api.js"; // make sure this path is correct
+import api from "../services/api.js"; // make sure this path is correct
 
 const dummyData = [
   {
