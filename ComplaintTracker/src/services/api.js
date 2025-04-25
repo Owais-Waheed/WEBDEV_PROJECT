@@ -33,25 +33,6 @@ const api = {
     return response.json();
   },
 
-  // createComplaint: async (complaintData) => {
-  //   try {
-  //     const response = await fetch(`${API_URL}/complaints`, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Authorization: `Bearer ${localStorage.getItem("token")}`, // The token
-  //       },
-  //       body: JSON.stringify(complaintData), // Sending the complaint data
-  //     });
-  //     if (!response.ok) {
-  //       throw new Error(`Failed to create complaint: ${response.statusText}`);
-  //     }
-  //     return await response.json(); // Returns the created complaint data
-  //   } catch (error) {
-  //     console.error(error);
-  //     return { error: error.message };
-  //   }
-  // },
 
   createComplaint: async (complaintData) => {
     try {
